@@ -9,6 +9,7 @@ public class PC {
     int cnt = 0;
     public void produce() throws InterruptedException {
         while(true) {
+            if(cnt++ == 100) break;
             synchronized (this) {
                 while(list.size() == capacity) wait();
 
